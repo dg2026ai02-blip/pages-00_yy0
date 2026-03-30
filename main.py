@@ -247,8 +247,8 @@ for mo, (bg, label) in month_bg.items():
         continue
     _, last_d = calendar.monthrange(2026, mo)
     fig.add_vrect(
-        x0=date(2026, mo, 1),
-        x1=min(date(2026, mo, last_d), END),
+        x0=str(date(2026, mo, 1)),
+        x1=str(min(date(2026, mo, last_d), END)),
         fillcolor=bg, opacity=0.08, line_width=0,
         annotation_text=label,
         annotation_position="top left",
@@ -305,7 +305,7 @@ events = [
 for ev_date, ev_label, ev_color in events:
     if f"{ev_date.month}월" in month_filter:
         fig.add_vline(
-            x=ev_date, line_dash="dot",
+            x=str(ev_date), line_dash="dot",
             line_color=ev_color, line_width=1.1, opacity=0.55,
             annotation_text=ev_label,
             annotation_position="top",
